@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Shape</title>
+    <link rel="stylesheet" href="KYS.css">
+</head>
+<body>
+    <div class="top-right-button">
+        <a href="know-your-measurements.html" class="measurements-button">Know Your Measurements</a>
+    </div>
+
+    <div class="container">
+        <h1>Know Your Body Shape</h1>
+        <p>Enter your measurements to find out your body shape.</p>
+        
+        <form id="shape-form">
+            <label for="shoulders">Shoulders (in cm):</label>
+            <input type="number" id="shoulders" required>
+
+            <label for="waist">Waist (in cm):</label>
+            <input type="number" id="waist" required>
+
+            <label for="hips">Hips (in cm):</label>
+            <input type="number" id="hips" required>
+
+            <button type="submit">Calculate Body Shape</button>
+        </form>
+
+        <div id="shape-result"></div>
+        <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+
+    </div>
+
+    <script>
+        document.getElementById('shape-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const shoulders = parseFloat(document.getElementById('shoulders').value);
+            const waist = parseFloat(document.getElementById('waist').value);
+            const hips = parseFloat(document.getElementById('hips').value);
+            
+            let shape = '';
+
+            // Basic logic for body shape calculation
+            if (shoulders > hips && shoulders > waist) {
+                shape = 'Inverted Triangle';
+            } else if (hips > shoulders && hips > waist) {
+                shape = 'Pear';
+            } else if (waist < shoulders && waist < hips) {
+                shape = 'Hourglass';
+            } else {
+                shape = 'Rectangle';
+            }
+
+            document.getElementById('shape-result').textContent = `Your body shape is: ${shape}`;
+        });
+    </script>
+</body>
+</html>

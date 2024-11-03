@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('https://media.glamour.com/photos/6626b67efe2842721af58f96/16:9/w_3488,h_1962,c_limit/wardrobe%20essentials.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #bb2c50ee;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #FFD700;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #FFB800;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+#shape-result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ecefe2;
+    margin-top: 1.5rem;
+}
+
+.top-right-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-right-link:hover {
+    background-color: rgba(255, 215, 0, 0.7);
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="number"], button {
+        font-size: 1rem;
+    }
+}
+.back-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.back-button:hover {
+    background-color: #FFB800;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+}
+.top-right-button {
+    position: absolute; /* Position the button absolutely */
+    top: 20px; /* Adjust the top position */
+    right: 20px; /* Adjust the right position */
+}
+
+.measurements-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Some padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+}
+
+.measurements-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
